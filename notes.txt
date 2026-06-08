@@ -1,0 +1,76 @@
+DATA PREPARATION:-
+
+converted excel file to csv 
+From df.head() - we can see that all datetime columns are object [Order Date,Ship Date]
+
+The target depends on the business problem we are trying to solve
+    1. Predict Profit - This becomes a regression problem to predict profit 
+    2. Predict Revenue - when business wants sales forecasting
+    3. Predict Units Sold - when demand forecasting is the goal
+    
+This dataset  represents sales transactions for products of different countries and regions.
+ Each row contains information about the product category, sales channel, order details, quantity sold, 
+ pricing, costs, revenue, and profit generated from a specific order. It can be used to analyze business performance
+ , sales trends, profitability, and operational efficiency across various markets and sales channels.
+
+
+This dataset is good for an EDA project because it contains different types of information, such as countries,
+ product types, sales channels, quantities sold, revenue, cost, and profit. This helps us explore patterns and 
+ understand how different factors affect sales and profits.
+ 
+The dataset also includes order and shipping dates, which allow us to analyze sales trends over time. 
+By performing EDA, we can find useful insights, detect patterns, and identify factors that contribute 
+to higher revenue and profit.
+
+
+Some notable characteristics of this dataset that may be useful for further analysis are:-
+   - It contains both categorical data
+   - It includes important business metrics like Total Revenue, Total Cost, and Total Profit, 
+   which can help measure performance
+   - Dataset covers multiple countries and regions, making it useful for comparing sales performance
+    across different locations
+   - Relationships between variables such as Units Sold, Revenue, Cost, and Profit can be explored to
+    uncover business insights.
+
+
+
+DATA CLEANING:-
+
+
+1,Identify Missing Values :-
+
+    -since there are no misisng values no need for treatment method for each column
+            NOTES(i dont see any null values but from checking the data from df.head(50) 
+                  i can see the time is not mentioned in any of the rows)
+    
+    -Converted to datetime first and striped the time from ship date
+    
+    -I removed the time from ShipDate beacuse it had no useful information and 
+     it avoids misleading analysis
+
+
+
+2,Detect and Remove Duplicate Records 
+
+    -Found no duplicate values 
+
+
+
+3,Detect and Handle outliers
+
+    No outliers in: Order ID, Units Sold, Unit Price, Unit Cost
+
+    Many outliers in:
+        Total Revenue → 33,685
+        Total Cost → 48,752
+        Total Profit → 20,867
+
+    This is very common in sales data because:
+        Some orders are very large bulk purchases.
+        Revenue and cost are calculated values, so they naturally spread widely.
+        Profit can vary heavily depending on big deals or expensive items.
+
+        we can transform or cap them only if building a model sensitive to extreme values 
+
+
+
