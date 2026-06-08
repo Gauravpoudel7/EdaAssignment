@@ -43,9 +43,9 @@ DATA CLEANING:-
             NOTES(i dont see any null values but from checking the data from df.head(50) 
                   i can see the time is not mentioned in any of the rows)
     
-    -Converted to datetime first and striped the time from ship date
+    -Converted to datetime first and striped the time from datetimecolumn
     
-    -I removed the time from ShipDate beacuse it had no useful information and 
+    -I removed the time from these column beacuse it had no useful information and 
      it avoids misleading analysis
 
 
