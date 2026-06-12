@@ -102,7 +102,8 @@ The box plot confirms the presence of numerous upper-end outliers
 These outliers should be investigated before removal because they may 
 represent genuine high-value business transactions rather than data errors.
 
-In bar chart in region and we can see that values according to region 
+
+performed bar chart in region and we can see that which order values are high according to the region 
  
 
 
@@ -122,19 +123,17 @@ the scatter plot shows positive corelation with minimum outliers
 
 
 
-
-
 # The scatter plots show multiple straight-line patterns. This suggests the dataset contains
 #  different product groups with different prices and costs. This insight is important because
 #  it helps us understand that the data is made up of several segments rather than one single group,
 #  which can improve analysis and machine learning models.
 
 
-
 # This insight is incredibly useful because it tells us that 
 # not all sales are equal. It explains why your business sometimes 
 # makes millions of dollars and sometimes loses millions of dollars 
 # on big orders
+
 
 
 
