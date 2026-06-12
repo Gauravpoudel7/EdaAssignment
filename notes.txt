@@ -74,3 +74,81 @@ DATA CLEANING:-
 
 
 
+Data Cleaning Summary :-
+
+Missing Values
+Checked all columns and found no missing values.
+Date columns contained time information, but all timestamps were 00:00:00, providing no additional value.
+Converted date columns to proper datetime format and removed the unnecessary time component to simplify analysis.
+
+Duplicate Records
+Checked for duplicate rows and found no duplicate records in the dataset.
+
+Outlier Analysis
+Performed outlier detection using the IQR method.
+No significant outliers were found in Order ID, Units Sold, Unit Price, and Unit Cost.
+A large number of outliers were detected in Total Revenue, Total Cost, and Total Profit. These values were retained because they represent legitimate large sales transactions and are common in sales datasets.
+Outlier treatment was not applied since removing them could lead to the loss of important business information.
+
+
+
+Analysis and Insights 
+
+
+In Total profit graph shows that the dataset is highly unpredictable, 
+we can see few rare transactions that either made millions of dollars or
+lost millions of dollars.
+The box plot confirms the presence of numerous upper-end outliers
+These outliers should be investigated before removal because they may 
+represent genuine high-value business transactions rather than data errors.
+
+In bar chart in region and we can see that values according to region 
+ 
+
+
+Taking Total Profit and Total Revenue , Correaltion = 0.88
+
+As Total Profit = Total Revenue - Total Cost So, 
+They go up and down together
+Total Revenue is all the money your business takes in from sales.
+Total Profit is the money you actually get to keep in your pocket.
+
+
+
+Total Revenue is the total amount of money coming into the business from sales.
+Total Profit is what is left over after you pay the costs. Because profit is 
+made directly from revenue, they move together in the same direction.
+the scatter plot shows positive corelation with minimum outliers 
+
+
+
+
+
+# The scatter plots show multiple straight-line patterns. This suggests the dataset contains
+#  different product groups with different prices and costs. This insight is important because
+#  it helps us understand that the data is made up of several segments rather than one single group,
+#  which can improve analysis and machine learning models.
+
+
+
+# This insight is incredibly useful because it tells us that 
+# not all sales are equal. It explains why your business sometimes 
+# makes millions of dollars and sometimes loses millions of dollars 
+# on big orders
+
+
+
+FINAL VERDICT :-
+
+# Following a Exploratory Data Analysis (EDA), the dataset proves to be highly viable for machine learning.
+#  The clear relationships discovered—such as the strong positive correlation between Total Revenue and Total Profit, and
+#  the varying profit margins across different product types—indicate that this data can be used to solve critical business problems
+
+
+# after analysis 
+#  Proceed to build a Random Forest Regressor targeting Total Profit.
+#  The dataset contains a  mix of operational scale indicators (Units Sold) and
+#  categorical market vales (Region, Item Type). Because tree-based machine learning algorithms 
+# naturally handle the sharp, non-linear financial spreads and extreme outliers discovered in the EDA phase,
+#  a regression model will provide highly accurate, actionable forecasting for business strategy.
+
